@@ -10,8 +10,8 @@
         <p>{{ p['body'] }}</p>
         <div>
             <span>
-                <cite>&mdash; {{ p.author }}</cite>
-                <small class="float-right">{{ p.timestamp }}</small>
+                <cite>&mdash; {{ p.author.first_name }} {{ p.author.last_name }}</cite>
+                <small class="float-right">{{ moment(p.date_created).fromNow() }}</small>
             </span>
     
         </div>

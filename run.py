@@ -1,5 +1,6 @@
 from app import create_app, db
 from app.blueprints.authentication.models import User
+from app.blueprints.blog.models import Post
 
 app = create_app()
 
@@ -7,5 +8,6 @@ app = create_app()
 def make_context():
     return {
         'db': db,
-        'User': User
+        'User': User,
+        'Post': Post
     }
