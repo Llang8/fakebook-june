@@ -7,11 +7,11 @@
     </h3>
     <hr />
 
-    <form action="" method="POST" s>
+    <form action="{{ url_for('blog.create_post') }}" method="POST">
         <div class="form-group">
             <div class="row">
                 <div class="col-md-10">
-                    <input name="body_text" class="form-control" type="text" placeholder="Your blog post here..." />
+                    <input class="form-control" type="text" name='body' placeholder="Your blog post here..." />
                 </div>
                 <div class="col-md-2">
                     <input class="btn btn-info btn-block" type="submit" value="Post" />

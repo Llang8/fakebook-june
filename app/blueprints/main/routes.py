@@ -24,7 +24,11 @@ def profile():
         db.session.commit()
         flash('Profile updated successfully', 'info')
         return redirect(url_for('main.profile'))
-    return render_template('profile.html')
+
+    context = {
+        'posts': Post.query.filter_by(user_id=current_user.id).order_by(Post.date_created.desc()).all()
+    }
+    return render_template('profile.html', **context)
 
 # contact
 @app.route('/contact')
